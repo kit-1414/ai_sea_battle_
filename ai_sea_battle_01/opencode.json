@@ -35,7 +35,7 @@
     "print_hello_base": {
       "description": "Печатает базовую строку приветствия с текущим временем.",
       "mode": "subagent",
-      "prompt": "{file:./.ai_files_dir/agents/print_hello_base.md}",
+      "prompt": "{file:./.ai_files_dir/agents/print_hello_line_action.md}",
       "permission": {
         "edit": "deny",
         "task": "deny",
@@ -48,7 +48,7 @@
     "print_hello_mod": {
       "description": "Печатает новый вариант строки приветствия с текущим 12-часовым временем и долями секунды.",
       "mode": "subagent",
-      "prompt": "{file:./.ai_files_dir/instructions/inst_print_hello_mod.md}\n\n{file:./.ai_files_dir/agents/print_hello_mod.md}",
+      "prompt": "{file:./.ai_files_dir/instructions/inst_print_hello_mod.md}\n\n{file:./.ai_files_dir/agents/print_hello_line_action.md}",
       "permission": {
         "edit": "deny",
         "task": "deny",
