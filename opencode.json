@@ -8,16 +8,12 @@
     "battle-field": {
       "description": "Проводит полный морской бой между двумя постоянными субагентами-адмиралами.",
       "mode": "primary",
-      "prompt": "{file:./.ai_files_dir/agents/battle-field.md}\n\nИнтеграция OpenCode: создавай игроков инструментом task с subagent_type=admiral. Сохрани task_id каждой созданной сессии и передавай соответствующий task_id при каждой следующей команде этому игроку. Для паузы после полного раунда используй Start-Sleep -Seconds 1.",
+      "prompt": "{file:./.ai_files_dir/agents/battle-field.md}\n\nИнтеграция OpenCode: создавай игроков инструментом task с subagent_type=admiral. Сохрани task_id каждой созданной сессии и передавай соответствующий task_id при каждой следующей команде этому игроку.",
       "permission": {
         "edit": "deny",
         "task": {
           "*": "deny",
           "admiral": "allow"
-        },
-        "bash": {
-          "*": "deny",
-          "Start-Sleep*": "allow"
         }
       }
     },
