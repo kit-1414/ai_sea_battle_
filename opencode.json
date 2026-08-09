@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    ".ai_files_dir/instructions/git-workflow.md"
+  ],
+  "agent": {
+    "battle-field": {
+      "description": "Проводит полный морской бой между двумя постоянными субагентами-адмиралами.",
+      "mode": "primary",
+      "prompt": "{file:./.ai_files_dir/agents/battle-field.md}\n\nИнтеграция OpenCode: создавай игроков инструментом task с subagent_type=admiral. Сохрани task_id каждой созданной сессии и передавай соответствующий task_id при каждой следующей команде этому игроку. Для паузы после полного раунда используй Start-Sleep -Seconds 1.",
+      "permission": {
+        "edit": "deny",
+        "task": {
+          "*": "deny",
+          "admiral": "allow"
+        },
+        "bash": {
+          "*": "deny",
+          "Start-Sleep*": "allow"
+        }
+      }
+    },
+    "admiral": {
+      "description": "Управляет одной стороной морского боя, хранит её состояние и записывает JSON-статистику.",
+      "mode": "subagent",
+      "hidden": true,
+      "prompt": "{file:./.ai_files_dir/agents/admiral.md}",
+      "permission": {
+        "task": "deny",
+        "bash": "deny",
+        "edit": {
+          "*": "deny",
+          "stats/*.json": "allow"
+        }
+      }
+    }
+  },
+  "command": {
+    "sea-battle": {
+      "description": "Запускает морской бой с необязательным размером квадратного поля.",
+      "agent": "battle-field",
+      "template": "Выполни инструкцию из @.ai_files_dir/commands/sea-battle.md\n\nАргумент размера поля: $ARGUMENTS"
+    }
+  }
+}
