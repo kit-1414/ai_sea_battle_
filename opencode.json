@@ -34,9 +34,9 @@
   },
   "command": {
     "sea-battle": {
-      "description": "Запускает морской бой с необязательным размером квадратного поля.",
+      "description": "Запускает морской бой с необязательными размером поля и количеством раундов.",
       "agent": "battle-field",
-      "template": "Выполни инструкцию из @.ai_files_dir/commands/sea-battle.md\n\nАргумент размера поля: $ARGUMENTS"
+      "template": "Выполни инструкцию из @.ai_files_dir/commands/sea-battle.md\n\nАргументы запуска `<field_size> <round_count>`: $ARGUMENTS"
     }
   }
 }
