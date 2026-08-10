@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Agents Sea Battle</title>
+  <desc id="desc">Простая обложка игры: два корабля на синем море.</desc>
+
+  <rect width="1200" height="630" fill="#eaf4f4"/>
+  <rect y="330" width="1200" height="300" fill="#176b87"/>
+
+  <text x="600" y="150" fill="#183153" font-family="Arial, sans-serif" font-size="76" font-weight="700" text-anchor="middle">AGENTS</text>
+  <text x="600" y="230" fill="#183153" font-family="Arial, sans-serif" font-size="76" font-weight="700" text-anchor="middle">SEA BATTLE</text>
+
+  <g fill="#2257a5">
+    <rect x="160" y="350" width="180" height="32" rx="4"/>
+    <rect x="205" y="320" width="90" height="30" rx="3"/>
+    <rect x="244" y="282" width="12" height="38"/>
+    <path d="M130 382h240l-38 58H168z"/>
+  </g>
+
+  <g fill="#2f855a">
+    <rect x="860" y="350" width="180" height="32" rx="4"/>
+    <rect x="905" y="320" width="90" height="30" rx="3"/>
+    <rect x="944" y="282" width="12" height="38"/>
+    <path d="M830 382h240l-38 58H868z"/>
+  </g>
+
+  <path d="M0 490q75-30 150 0t150 0 150 0 150 0 150 0 150 0 150 0 150 0v140H0z" fill="#124f68"/>
+  <circle cx="600" cy="394" r="8" fill="#eaf4f4"/>
+  <circle cx="600" cy="394" r="28" fill="none" stroke="#eaf4f4" stroke-width="4"/>
+</svg>
