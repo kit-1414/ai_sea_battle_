@@ -70,7 +70,7 @@
       "agent": "print_hello_base",
       "template": "Выполни инструкцию из @.ai_files_dir/instructions/inst_print_hello_mod.md"
     },
-    "cmd_print_hello_run_mod": {
+    "cmd_print_hello_alt_mod_run": {
       "description": "применяет новый формат строки приветствия и выводит строку",
       "agent": "print_hello_base",
       "template": "Выполни инструкцию из @.ai_files_dir/instructions/inst_print_hello_mod.md, далее выполняем @.ai_files_dir/agents/print_hello_line_action.md"
