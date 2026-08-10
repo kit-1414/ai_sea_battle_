@@ -33,7 +33,7 @@
       }
     },
     "print_hello_base": {
-      "description": "Печатает базовую строку приветствия с текущим временем.",
+      "description": "Печатает строку приветствия в формате, актуальном на момент работы.",
       "mode": "subagent",
       "prompt": "{file:./.ai_files_dir/agents/print_hello_line_action.md}",
       "permission": {
@@ -64,6 +64,16 @@
       "description": "Запускает морской бой с необязательными размером поля и количеством раундов.",
       "agent": "battle-field",
       "template": "Выполни инструкцию из @.ai_files_dir/commands/sea-battle.md\n\nАргументы запуска `<field_size> <round_count>`: $ARGUMENTS"
+    },
+    "cmd_print_hello_mod": {
+      "description": "применяет базовый формат строки приветствия",
+      "agent": "print_hello_base",
+      "template": "Выполни инструкцию из @.ai_files_dir/instructions/inst_print_hello_mod.md"
+    },
+    "cmd_print_hello_base": {
+      "description": "применяет новый формат строки приветствия",
+      "agent": "print_hello_base",
+      "template": "Выполни инструкцию из @.ai_files_dir/instructions/inst_print_hello_mod.md"
     }
   }
 }
