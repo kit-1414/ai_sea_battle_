@@ -32,6 +32,20 @@
         }
       }
     },
+    "admiral_alt": {
+      "description": "Управляет одной стороной морского боя, хранит её состояние и записывает JSON-статистику.",
+      "mode": "subagent",
+      "hidden": true,
+      "prompt": "{file:./.ai_files_dir/agents/admiral_alt.md}",
+      "permission": {
+        "task": "deny",
+        "bash": "deny",
+        "edit": {
+          "*": "deny",
+          "stats/*.json": "allow"
+        }
+      }
+    },
     "print_hello_base": {
       "description": "Печатает строку приветствия в формате, актуальном на момент работы.",
       "mode": "subagent",
