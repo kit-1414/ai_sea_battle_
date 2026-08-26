@@ -5,8 +5,8 @@
  - https://opencode.ai/docs/ru/  офф дока по опенкоде на русском
  - https://open-code.ai/ru/docs/commands дока по опенкоде на русском
  - https://datatalks.ru/opencode/index.html - гайд по исп openCode
- - ссылка на ГИТ проекет "Морсокй бой"
- - ссылка на ГИТ проекет "Расписание отпусков"
+ - https://github.com/kit-1414/ai_sea_battle_.git - ссылка на ГИТ проекет "Морсокй бой" (мы в нем счас)
+ - https://github.com/kit-1414/vacation_sheet.git - ссылка на ГИТ проекет "Расписание отпусков"
 
 ## Введение
 
