@@ -2,10 +2,10 @@
 
 ## Execution
 
-- [ ] PREP — Before implementing this plan, checkpoint all Git-repository changes with commit message `before <NN_plan_name>`; if clean, record `clean; no commit needed`. Model: same as selected implementation patch.
+- [ ] PREP — Before implementing this plan, inspect and record the Git worktree state without staging, committing, reverting, or modifying existing changes. Model: same as selected implementation patch.
 - [ ] <patch ID> — [<short title>](patches/<filename>.md) — Model: Luna medium — Prerequisites: <IDs or none>.
 
-<!-- Add ordered patch entries. Mark PREP with a commit hash or clean outcome. Recheck repository state on EVERY implementation invocation, even if PREP is already checked; append the new checkpoint outcome to PREP. No per-patch commits are required. -->
+<!-- Add ordered patch entries. Mark PREP with the observed clean/dirty outcome. Recheck repository state on EVERY implementation invocation, even if PREP is already checked; append the new outcome to PREP. Implementation never stages or commits changes automatically. -->
 
 ## Interruptions
 

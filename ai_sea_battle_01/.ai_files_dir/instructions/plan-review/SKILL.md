@@ -38,7 +38,7 @@ If actionable discrepancies exist, allocate correction number as maximum existin
 - If no in-scope actionable discrepancy exists, create only the review report, not an empty correction plan. If verification is incomplete, use a blocked verdict rather than an unconditional pass.
 
 For each correction round create:
-- `plan-fix_NN.md`, following [the checklist template](../plan/references/plan-template.md), including PREP and ordered patch entries with model/effort (Luna medium by default).
+- `plan-fix_NN.md`, following [the checklist template](../plan/references/plan-template.md), including the repository-state PREP and ordered patch entries with model/effort (Luna medium by default).
 - `patches/fix-NN-patch-MM-name.md`, following [the patch template](../plan/references/patch-spec-template.md).
 
 Create these specifications from architecture and inspected current source, NEVER by reading old patches. Each must contain full applicable requirements, concrete paths/contracts/changes, constraints, prerequisites, necessary skills, acceptance criteria and minimal validation. Do not require the implementer to read architecture or review reports. Include a dedicated new-tests section ONLY when essential and explain why existing tests cannot cover the risk.

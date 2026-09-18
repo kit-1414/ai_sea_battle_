@@ -5,6 +5,11 @@
     ".ai_files_dir/instructions/git-workflow.md",
     ".ai_files_dir/instructions/inst_print_hello_base.md"
   ],
+  "skills": {
+    "paths": [
+      ".ai_files_dir/instructions"
+    ]
+  },
   "agent": {
     "battle-field": {
       "description": "Проводит полный морской бой между двумя постоянными субагентами-адмиралами.",
@@ -57,6 +62,83 @@
           "Get-Date *": "allow"
         }
       }
+    },
+    "mass_agent_start": {
+      "description": "Уточняет задачу, запускает планирование и последовательно координирует реализацию всех шагов.",
+      "mode": "primary",
+      "model": "openai/gpt-5.6-luna",
+      "prompt": "{file:./.ai_files_dir/agents/mass_agent_start.md}",
+      "permission": {
+        "edit": "allow",
+        "external_directory": "deny",
+        "task": {
+          "*": "deny",
+          "mass_agent_plan": "allow",
+          "mass_agent_implement": "allow"
+        },
+        "bash": {
+          "*": "deny",
+          "git status*": "allow",
+          "Test-Path *": "allow",
+          "New-Item *": "allow",
+          "mkdir *": "allow"
+        },
+        "question": "allow"
+      }
+    },
+    "mass_agent_plan": {
+      "description": "Создаёт архитектурный контракт, checklist и изолированные patch specifications для подтверждённой задачи.",
+      "mode": "subagent",
+      "hidden": true,
+      "model": "openai/gpt-5.6-sol",
+      "variant": "xhigh",
+      "prompt": "{file:./.ai_files_dir/agents/mass_agent_plan.md}",
+      "permission": {
+        "edit": {
+          "*": "deny",
+          ".ai/plans/**": "allow"
+        },
+        "external_directory": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "git status*": "allow",
+          "New-Item *": "allow",
+          "mkdir *": "allow"
+        },
+        "question": "deny",
+        "skill": {
+          "*": "deny",
+          "plan": "allow"
+        }
+      }
+    },
+    "mass_agent_implement": {
+      "description": "Реализует один выбранный patch плана, выполняет проверки и фиксирует результат в checklist.",
+      "mode": "subagent",
+      "hidden": true,
+      "model": "openai/gpt-5.6-luna",
+      "prompt": "{file:./.ai_files_dir/agents/mass_agent_implement.md}",
+      "permission": {
+        "edit": "allow",
+        "external_directory": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "allow",
+          "git add*": "deny",
+          "git commit*": "deny",
+          "git reset*": "deny",
+          "git restore*": "deny",
+          "git checkout*": "deny",
+          "git clean*": "deny",
+          "git push*": "deny"
+        },
+        "question": "deny",
+        "skill": {
+          "*": "deny",
+          "plan-implement": "allow"
+        }
+      }
     }
   },
   "command": {
@@ -74,6 +156,11 @@
       "description": "Применяет новый формат строки приветствия и выводит строку.",
       "agent": "print_hello_base",
       "template": "Выполни инструкцию из @.ai_files_dir/instructions/inst_print_hello_mod.md, затем выполни инструкцию из @.ai_files_dir/agents/print_hello_line_action.md"
+    },
+    "mass_agent_start": {
+      "description": "Уточняет, планирует и последовательно реализует переданную задачу.",
+      "agent": "mass_agent_start",
+      "template": "Запусти полный workflow массовой реализации.\n\nИсходное описание задачи:\n$ARGUMENTS"
     }
   }
 }

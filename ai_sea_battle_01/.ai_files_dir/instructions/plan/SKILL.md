@@ -1,7 +1,7 @@
 ---
 name: plan
 description: Plan a task without implementing it. Create architecture.md, self-contained patch specifications, and an execution checklist under .ai/plans/NN_plan_name for subsequent plan-implement and independent plan-review runs.
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Plan
@@ -43,7 +43,7 @@ This is the authoritative task contract for review. Distinguish requirements fro
 
 `plan.md` is a simple ordered checklist using [the checklist template](references/plan-template.md). Each patch entry has a relative link, `[ ]` or `[x]`, recommended model/effort, and prerequisite IDs if any. Do not embed implementation details here.
 
-The first entry is a non-patch preparation step: checkpoint all repository changes before implementation, using the exact commit message `before NN_plan_name`. This step is executed by `plan-implement`, not by `plan`.
+The first entry is a non-patch preparation step: inspect and record the current repository state before implementation without staging, committing, reverting, or otherwise changing existing work. This step is executed by `plan-implement`, not by `plan`.
 
 Reserve a `## Interruptions` section for factual blockers: patch ID, observed problem, evidence, attempted validation, and the clarification needed. This is the ONLY checklist content review may use as task evidence. Keep implementation success reports and patch summaries out of it.
 

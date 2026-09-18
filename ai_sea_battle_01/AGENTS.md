@@ -12,8 +12,12 @@
 
 - `.ai_files_dir/agents/battle-field.md` - универсальная инструкция координатора игры.
 - `.ai_files_dir/agents/admiral.md` - универсальная инструкция игрока. Координатор запускает две независимые сессии: `blue` и `green`.
+- `.ai_files_dir/agents/mass_agent_start.md` - координатор постановки, планирования и реализации задачи.
+- `.ai_files_dir/agents/mass_agent_plan.md` - планировщик, создающий workflow в `.ai/plans/`.
+- `.ai_files_dir/agents/mass_agent_implement.md` - реализатор одного patch плана.
 - `.ai_files_dir/commands/sea-battle.md` - универсальный сценарий запуска игры.
-- `opencode.json` - адаптер OpenCode: регистрирует агентов, разрешения и команду `/sea-battle [размер] [раунды]`.
+- `.ai_files_dir/instructions/plan*` - skills планирования, реализации и проверки.
+- `opencode.json` - адаптер OpenCode: регистрирует агентов, разрешения и команды `/sea-battle [размер] [раунды]` и `/mass_agent_start [задача]`.
 - `stats/blue.json` и `stats/green.json` - статистика последней завершённой игры.
 
 Модель и провайдер в проекте не закрепляются. При работе через OpenCode агенты наследуют их из текущей конфигурации.
